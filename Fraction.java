@@ -47,4 +47,13 @@ public class Fraction {
             System.out.println("Error: denomenator cannot be zero");
         }
 	}
+	
+	// static methods
+	public static Fraction mult (Fraction a, Fraction b) {
+		int n = a.numerator * b.numerator;
+		int d = a.denominator * b.denominator;
+		Fraction ans = new Fraction(n, d);
+		return ans;
+	}
 }
+
