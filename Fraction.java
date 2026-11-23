@@ -47,12 +47,53 @@ public class Fraction {
             System.out.println("Error: denomenator cannot be zero");
         }
 	}
+	public void reduce() {
+		final int GCF = gcf();
+		numerator = numerator/GCF;
+		denominator = denominator/GCF;
+	}
+	
+	//helper methods
+	private int gcf() {
+		int a = numerator;
+		int b = denominator;
+		while(b!=0) {
+			int gcf = b;
+			b = a%b;
+			a = gcf;
+		}
+		return a;
+	} 
 	
 	// static methods
-	public static Fraction mult (Fraction a, Fraction b) {
+	public static Fraction multiply(Fraction a, Fraction b) {
 		int n = a.numerator * b.numerator;
 		int d = a.denominator * b.denominator;
 		Fraction ans = new Fraction(n, d);
+		ans.reduce();
+		return ans;
+	}
+	public static Fraction devide(Fraction a, Fraction b) {
+		int n = a.numerator * b.denominator;
+		int d = a.denominator * b.numerator;
+		Fraction ans = new Fraction(n, d);
+		ans.reduce();
+		return ans;
+	}
+	public static Fraction add(Fraction a, Fraction b) {
+		int n = a.numerator * b.denominator + 
+				a.denominator * b.numerator;
+		int d = a.denominator * b.numerator;
+		Fraction ans = new Fraction(n, d);
+		ans.reduce();
+		return ans;
+	}
+	public static Fraction subtract(Fraction a, Fraction b) {
+		int n = a.numerator * b.denominator - 
+				a.denominator * b.numerator;
+		int d = a.denominator * b.numerator;
+		Fraction ans = new Fraction(n, d);
+		ans.reduce();
 		return ans;
 	}
 }
