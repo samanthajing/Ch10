@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Fraction {
     // instance variables (attributes, fields)
     private int numerator;
@@ -5,8 +7,9 @@ public class Fraction {
 
     // constructors
     public Fraction() { 
-        numerator = 1;
-        denominator = 1;
+        Random random = new Random();
+        numerator = random.nextInt(10)+1;
+        denominator = random.nextInt(10)+1;
     }
     public Fraction(int n, int d) {
         numerator = n;
