@@ -8,8 +8,8 @@ public class Fraction {
     // constructors
     public Fraction() { 
         Random random = new Random();
-        numerator = random.nextInt(10)+1;
-        denominator = random.nextInt(10)+1;
+        numerator = random.nextInt(9)+1;
+        denominator = random.nextInt(9)+1;
     }
     public Fraction(int n, int d) {
         numerator = n;
