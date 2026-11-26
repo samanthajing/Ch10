@@ -54,12 +54,14 @@ public class Fraction {
 		final int GCF = gcf();
 		numerator = numerator/GCF;
 		denominator = denominator/GCF;
+		
+		
 	}
 	
 	//helper methods
 	private int gcf() {
-		int a = numerator;
-		int b = denominator;
+		int a = Math.abs(numerator);
+		int b = Math.abs(denominator);
 		while(b!=0) {
 			int gcf = b;
 			b = a%b;
@@ -86,7 +88,7 @@ public class Fraction {
 	public static Fraction add(Fraction a, Fraction b) {
 		int n = a.numerator * b.denominator + 
 				a.denominator * b.numerator;
-		int d = a.denominator * b.numerator;
+		int d = a.denominator * b.denominator;
 		Fraction ans = new Fraction(n, d);
 		ans.reduce();
 		return ans;
@@ -94,7 +96,7 @@ public class Fraction {
 	public static Fraction subtract(Fraction a, Fraction b) {
 		int n = a.numerator * b.denominator - 
 				a.denominator * b.numerator;
-		int d = a.denominator * b.numerator;
+		int d = a.denominator * b.denominator;
 		Fraction ans = new Fraction(n, d);
 		ans.reduce();
 		return ans;
