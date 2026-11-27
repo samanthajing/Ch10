@@ -50,7 +50,7 @@ public class FractionQuiz {
             if (q == 0) {
                 System.out.print("BOOOOO.");
             } else {
-                double score = c / q * 100.0;
+                double score = c * 100.0 / q ;
                 System.out.print("Your score is " + score + ". ");
             }
         }
