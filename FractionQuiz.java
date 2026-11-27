@@ -8,6 +8,7 @@ public class FractionQuiz {
         Scanner in = new Scanner(System.in);
         Random r = new Random();
         String[] operations = {"+", "-", "*", "/"};
+        String input;
         int q = 0;
         int c = 0;
 
@@ -18,7 +19,7 @@ public class FractionQuiz {
             System.out.print(f1 + " " + randomOp + " " + f2 + " "
                 + "="
                 + " ");
-            String input = in.next();
+            input = in.next();
             System.out.println();
             if (input.equals("quit")) break;
 			Fraction i = new Fraction(input);
